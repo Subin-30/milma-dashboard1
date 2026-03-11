@@ -1,0 +1,191 @@
+Category,Product,Year,Season,Revenue,Qty_Kg
+Cheese,Cheese Slice 100gm,2021,Base,164001.87,330.8
+Cheese,Cheese Slice 100gm,2021,Festival (Aug–Sep),92764.66,186.5
+Cheese,Cheese Slice 100gm,2021,Peak (Apr–Jun),112081.93000000001,223.5
+Cheese,Cheese Slice 100gm,2022,Base,237521.8,441.5
+Cheese,Cheese Slice 100gm,2022,Festival (Aug–Sep),63008.01,111.5
+Cheese,Cheese Slice 100gm,2022,Peak (Apr–Jun),88280.52,172.8
+Cheese,Cheese Slice 100gm,2023,Base,301922.23,495.3
+Cheese,Cheese Slice 100gm,2023,Festival (Aug–Sep),77577.97,122.0
+Cheese,Cheese Slice 100gm,2023,Peak (Apr–Jun),76259.42,122.7
+Cheese,Cheese Slice 100gm,2024,Base,429980.41000000003,679.8
+Cheese,Cheese Slice 100gm,2024,Festival (Aug–Sep),119052.67,188.2
+Cheese,Cheese Slice 100gm,2024,Peak (Apr–Jun),99835.08,157.8
+Cheese,Cheese Slice 100gm,2025,Base,651144.14,1060.2
+Cheese,Cheese Slice 100gm,2025,Festival (Aug–Sep),175816.44,280.6
+Cheese,Cheese Slice 100gm,2025,Peak (Apr–Jun),205514.56,323.9
+Cheese,Cheese Spread Chilly Garlic 200gm,2021,Base,7980.02,23.0
+Cheese,Cheese Spread Chilly Garlic 200gm,2021,Festival (Aug–Sep),1962.02,5.6
+Cheese,Cheese Spread Chilly Garlic 200gm,2021,Peak (Apr–Jun),3105.17,8.8
+Cheese,Cheese Spread Chilly Garlic 200gm,2022,Base,2760.0,8.0
+Cheese,Cheese Spread Chilly Garlic 200gm,2022,Peak (Apr–Jun),6292.97,17.4
+Cheese,Cheese Spread Pepper 200gm,2021,Base,6588.6900000000005,19.0
+Cheese,Cheese Spread Pepper 200gm,2021,Festival (Aug–Sep),2652.0,7.6000000000000005
+Cheese,Cheese Spread Pepper 200gm,2021,Peak (Apr–Jun),3651.48,10.4
+Cheese,Cheese Spread Pepper 200gm,2022,Base,3354.99,9.0
+Cheese,Cheese Spread Pepper 200gm,2022,Festival (Aug–Sep),1500.99,3.8
+Cheese,Cheese Spread Pepper 200gm,2022,Peak (Apr–Jun),2365.94,6.8
+Cheese,Cheese Spread Pepper 200gm,2023,Base,316.0,0.8
+Cheese,Cheese Spread Plain 200gm,2021,Base,31050.63,88.4
+Cheese,Cheese Spread Plain 200gm,2021,Festival (Aug–Sep),20458.01,58.4
+Cheese,Cheese Spread Plain 200gm,2021,Peak (Apr–Jun),32551.59,91.2
+Cheese,Cheese Spread Plain 200gm,2022,Base,35535.88,94.8
+Cheese,Cheese Spread Plain 200gm,2022,Festival (Aug–Sep),7727.97,19.4
+Cheese,Cheese Spread Plain 200gm,2022,Peak (Apr–Jun),16144.95,46.0
+Cheese,Cheese Spread Plain 200gm,2023,Base,33402.32,76.6
+Cheese,Cheese Spread Plain 200gm,2023,Festival (Aug–Sep),8634.96,18.6
+Cheese,Cheese Spread Plain 200gm,2023,Peak (Apr–Jun),9023.99,21.0
+Cheese,Cheese Spread Plain 200gm,2024,Base,28505.72,61.6
+Cheese,Cheese Spread Plain 200gm,2024,Festival (Aug–Sep),6617.95,14.4
+Cheese,Cheese Spread Plain 200gm,2024,Peak (Apr–Jun),9502.39,20.6
+Cheese,Cheese Spread Plain 200gm,2025,Base,32797.97,73.8
+Cheese,Cheese Spread Plain 200gm,2025,Festival (Aug–Sep),7188.99,15.8
+Cheese,Cheese Spread Plain 200gm,2025,Peak (Apr–Jun),9094.33,19.8
+Curd,Dtm Curd 500g,2023,Base,1437576.55,24182.5
+Curd,Dtm Curd 500g,2024,Base,3368814.75,56695.5
+Curd,Dtm Curd 500g,2024,Festival (Aug–Sep),94105.34,1592.5
+Curd,Dtm Curd 500g,2024,Peak (Apr–Jun),2438642.69,40878.0
+Curd,Katta Thairu 400g,2021,Base,27405.0,316.8
+Curd,Katta Thairu 400g,2021,Festival (Aug–Sep),8304.0,96.0
+Curd,Katta Thairu 400g,2021,Peak (Apr–Jun),10716.0,124.8
+Curd,Katta Thairu 400g,2022,Base,12252.0,141.6
+Curd,Katta Thairu 400g,2022,Peak (Apr–Jun),2244.0,26.4
+Curd,Katta Thairu 400g,2023,Base,237.61,2.4
+Curd,Kattimoru 250 Ml Sachet,2022,Base,2159.99,46.25
+Curd,Kattimoru 250 Ml Sachet,2022,Festival (Aug–Sep),26394.2,574.5
+Curd,Kattimoru 250 Ml Sachet,2022,Peak (Apr–Jun),77055.0,1698.75
+Curd,Kattimoru 250 Ml Sachet,2024,Base,120.01,386.25
+Curd,Kattimoru 250 Ml Sachet,2024,Peak (Apr–Jun),239.99,5.0
+Curd,Milma Katti Moru 1 Ltr,2022,Base,49800.0,1200.0
+Curd,Milma Katti Moru 1 Ltr,2022,Festival (Aug–Sep),20238.48,486.0
+Curd,Milma Katti Moru 1 Ltr,2022,Peak (Apr–Jun),15333.2,400.0
+Curd,Milma Katti Moru 1 Ltr,2023,Base,300.61,6.18
+Curd,Milma Katti Moru 500ml,2021,Base,1598711.4,32629.0
+Curd,Milma Katti Moru 500ml,2021,Festival (Aug–Sep),241254.0,4902.5
+Curd,Milma Katti Moru 500ml,2021,Peak (Apr–Jun),1055336.4,21506.0
+Curd,Milma Katti Moru 500ml,2022,Base,2481531.89,49528.0
+Curd,Milma Katti Moru 500ml,2022,Festival (Aug–Sep),127253.19,2411.0
+Curd,Milma Katti Moru 500ml,2022,Peak (Apr–Jun),1183248.0,24258.0
+Curd,Milma Katti Moru 500ml,2023,Base,2984683.62,53612.59
+Curd,Milma Katti Moru 500ml,2023,Festival (Aug–Sep),524389.32,9542.45
+Curd,Milma Katti Moru 500ml,2023,Peak (Apr–Jun),2213327.03,39881.07
+Curd,Milma Katti Moru 500ml,2024,Base,3505815.2600000002,64291.18
+Curd,Milma Katti Moru 500ml,2024,Festival (Aug–Sep),2192273.14,40143.47
+Curd,Milma Katti Moru 500ml,2024,Peak (Apr–Jun),3599616.23,66046.8
+Curd,Set Curd 1 Kg - Toned Milk,2022,Base,13332.04,138.0
+Curd,Set Curd 1 Kg - Toned Milk,2023,Base,34943.98,364.0
+Curd,Set Curd 1 Kg - Toned Milk,2023,Festival (Aug–Sep),4032.02,42.0
+Curd,Set Curd 1 Kg - Toned Milk,2023,Peak (Apr–Jun),11328.01,118.0
+Curd,Set Curd 1 Kg - Toned Milk,2024,Base,187188.08,2664.0
+Curd,Set Curd 1 Kg - Toned Milk,2024,Festival (Aug–Sep),612878.56,7341.0
+Curd,Set Curd 1 Kg - Toned Milk,2024,Peak (Apr–Jun),292999.76,3052.0
+Curd,Skimmed Milk Curd 500gm,2021,Base,59373463.97,1229744.5
+Curd,Skimmed Milk Curd 500gm,2021,Festival (Aug–Sep),21861596.419999998,452492.0
+Curd,Skimmed Milk Curd 500gm,2021,Peak (Apr–Jun),33513803.26,693525.5
+Curd,Skimmed Milk Curd 500gm,2022,Base,77681827.71,1549032.0
+Curd,Skimmed Milk Curd 500gm,2022,Festival (Aug–Sep),28270120.46,533931.0
+Curd,Skimmed Milk Curd 500gm,2022,Peak (Apr–Jun),38947462.68,805770.0
+Curd,Skimmed Milk Curd 525g,2022,Base,19949316.4,353017.45
+Curd,Skimmed Milk Curd 525g,2022,Peak (Apr–Jun),5015744.74,101000.15000000001
+Curd,Skimmed Milk Curd 525g,2023,Base,111780133.26,1915723.84
+Curd,Skimmed Milk Curd 525g,2023,Festival (Aug–Sep),33973287.78,582320.7
+Curd,Skimmed Milk Curd 525g,2023,Peak (Apr–Jun),65497802.51,1122654.46
+Curd,Skimmed Milk Curd 525g,2024,Base,65646161.89,1125201.28
+Curd,Skimmed Milk Curd 525g,2024,Festival (Aug–Sep),270314303.8,4636083.15
+Curd,Skimmed Milk Curd 525g,2024,Peak (Apr–Jun),63166584.48,1082590.62
+Curd,Skimmed Milk Curd 5kg,2022,Base,29295.05,500.0
+Curd,Skimmed Milk Curd 5kg,2022,Festival (Aug–Sep),46710.19,865.0
+Curd,Skimmed Milk Curd 5kg,2023,Base,435730.56,7930.0
+Curd,Skimmed Milk Curd 5kg,2023,Festival (Aug–Sep),150021.58000000002,2745.0
+Curd,Skimmed Milk Curd 5kg,2023,Peak (Apr–Jun),361597.9,6560.0
+Curd,Skimmed Milk Curd 5kg,2024,Base,310459.88,5675.0
+Curd,Skimmed Milk Curd 5kg,2024,Festival (Aug–Sep),4567531.9,84535.0
+Curd,Skimmed Milk Curd 5kg,2024,Peak (Apr–Jun),372617.94,6905.0
+Curd,Special Curd 500gm- Tonned Milk,2021,Base,288416.0,4929.0
+Curd,Special Curd 500gm- Tonned Milk,2021,Festival (Aug–Sep),73522.0,1281.0
+Curd,Special Curd 500gm- Tonned Milk,2021,Peak (Apr–Jun),241806.0,4114.5
+Curd,Special Curd 500gm- Tonned Milk,2022,Base,335673.18,5709.0
+Curd,Special Curd 500gm- Tonned Milk,2022,Peak (Apr–Jun),229430.0,3912.5
+Curd,Special Curd 500gm- Tonned Milk,2023,Base,119672.86,1969.0
+Curd,Special Curd 500gm- Tonned Milk,2023,Festival (Aug–Sep),47386.01,785.0
+Curd,Special Curd 500gm- Tonned Milk,2023,Peak (Apr–Jun),59077.87,972.0
+Curd,Special Curd 500gm- Tonned Milk,2024,Base,115074.94,1855.0
+Curd,Special Curd 500gm- Tonned Milk,2024,Festival (Aug–Sep),26364302.46,427634.5
+Curd,Special Curd 500gm- Tonned Milk,2024,Peak (Apr–Jun),18028.63,300.0
+Paneer,Paneer 1kg,2021,Base,58862.92,158.0
+Paneer,Paneer 1kg,2021,Festival (Aug–Sep),5007.82,14.0
+Paneer,Paneer 1kg,2021,Peak (Apr–Jun),12780.97,35.0
+Paneer,Paneer 1kg,2022,Base,328331.61,895.0
+Paneer,Paneer 1kg,2022,Festival (Aug–Sep),108433.62,297.0
+Paneer,Paneer 1kg,2022,Peak (Apr–Jun),118049.06999999999,323.0
+Paneer,Paneer 1kg,2023,Base,330964.1,783.0
+Paneer,Paneer 1kg,2023,Festival (Aug–Sep),91772.89,217.0
+Paneer,Paneer 1kg,2023,Peak (Apr–Jun),116692.98,279.0
+Paneer,Paneer 1kg,2024,Base,454895.68,1072.0
+Paneer,Paneer 1kg,2024,Festival (Aug–Sep),117728.78,277.0
+Paneer,Paneer 1kg,2024,Peak (Apr–Jun),194381.79,469.0
+Paneer,Paneer 1kg,2025,Base,578273.25,1420.0
+Paneer,Paneer 1kg,2025,Festival (Aug–Sep),173784.06,423.0
+Paneer,Paneer 1kg,2025,Peak (Apr–Jun),287324.46,701.0
+Paneer,Paneer 200gm - Sliced,2021,Base,899444.94,2324.8
+Paneer,Paneer 200gm - Sliced,2021,Festival (Aug–Sep),437489.82,1130.4
+Paneer,Paneer 200gm - Sliced,2021,Peak (Apr–Jun),624502.3,1613.2
+Paneer,Paneer 200gm - Sliced,2022,Base,1446853.32,3849.8
+Paneer,Paneer 200gm - Sliced,2022,Festival (Aug–Sep),371664.92,1003.4
+Paneer,Paneer 200gm - Sliced,2022,Peak (Apr–Jun),602613.58,1578.6
+Paneer,Paneer 200gm - Sliced,2023,Base,1696072.57,4228.2
+Paneer,Paneer 200gm - Sliced,2023,Festival (Aug–Sep),428528.59,1068.3999999999999
+Paneer,Paneer 200gm - Sliced,2023,Peak (Apr–Jun),611951.76,1526.0
+Paneer,Paneer 200gm - Sliced,2024,Base,2100457.83,5376.8
+Paneer,Paneer 200gm - Sliced,2024,Festival (Aug–Sep),631876.36,1576.8
+Paneer,Paneer 200gm - Sliced,2024,Peak (Apr–Jun),822856.63,2051.2
+Paneer,Paneer 200gm - Sliced,2025,Base,2925780.37,7486.6
+Paneer,Paneer 200gm - Sliced,2025,Festival (Aug–Sep),760542.85,1912.8
+Paneer,Paneer 200gm - Sliced,2025,Peak (Apr–Jun),1012518.01,2526.0
+Sambaram,Butter Milk 175 Ml - Sambharam,2022,Base,443006.77,20907.91
+Sambaram,Butter Milk 175 Ml - Sambharam,2022,Festival (Aug–Sep),88070.53,4158.05
+Sambaram,Butter Milk 180ml - Sambaram,2021,Base,305934.5,14751.9
+Sambaram,Butter Milk 180ml - Sambaram,2021,Festival (Aug–Sep),33890.0,1645.2
+Sambaram,Butter Milk 180ml - Sambaram,2021,Peak (Apr–Jun),1101280.1,52757.82
+Sambaram,Butter Milk 180ml - Sambaram,2022,Base,2321797.6,113001.12
+Sambaram,Butter Milk 180ml - Sambaram,2022,Peak (Apr–Jun),1458658.3,70602.66
+Sambaram,Butter Milk 200 Ml,2022,Base,681291.13,19815.6
+Sambaram,Butter Milk 200 Ml,2023,Base,4473058.77,127828.2
+Sambaram,Butter Milk 200 Ml,2023,Festival (Aug–Sep),207207.66,5749.0
+Sambaram,Butter Milk 200 Ml,2023,Peak (Apr–Jun),4470685.69,127646.2
+Sambaram,Butter Milk 200 Ml,2024,Base,4960163.95,142068.2
+Sambaram,Butter Milk 200 Ml,2024,Festival (Aug–Sep),102182.55,2868.0
+Sambaram,Butter Milk 200 Ml,2024,Peak (Apr–Jun),5013234.87,144077.2
+Sambaram,Butter Milk 200 Ml,2025,Base,3896964.59,111305.2
+Sambaram,Butter Milk 200 Ml,2025,Festival (Aug–Sep),100521.94,2836.0
+Sambaram,Butter Milk 200 Ml,2025,Peak (Apr–Jun),2408391.17,69610.4
+Sambaram,Butter Milk 200 Ml - Nellikka,2022,Base,3994.95,115.0
+Sambaram,Butter Milk 200 Ml - Nellikka,2022,Festival (Aug–Sep),88219.69,2609.0
+Sambaram,Butter Milk 250ml-Nellikka,2021,Base,419098.0,15575.5
+Sambaram,Butter Milk 250ml-Nellikka,2021,Festival (Aug–Sep),45038.0,1653.5
+Sambaram,Butter Milk 250ml-Nellikka,2021,Peak (Apr–Jun),1139749.6,42163.0
+Sambaram,Butter Milk 250ml-Nellikka,2022,Base,2259428.0,86186.0
+Sambaram,Butter Milk 250ml-Nellikka,2022,Peak (Apr–Jun),1427012.0,54117.5
+Yogurt,Flavoured Yoghurt 80gm,2021,Base,8213.16,38.879999999999995
+Yogurt,Flavoured Yoghurt 80gm,2021,Festival (Aug–Sep),5374.07,25.439999999999998
+Yogurt,Flavoured Yoghurt 80gm,2021,Peak (Apr–Jun),2129.34,10.08
+Yogurt,Flavoured Yoghurt 80gm,2022,Base,20506.6,96.16
+Yogurt,Flavoured Yoghurt 80gm,2022,Festival (Aug–Sep),1216.76,5.76
+Yogurt,Flavoured Yoghurt 80gm,2022,Peak (Apr–Jun),6218.99,29.439999999999998
+Yogurt,Flavoured Yoghurt 80gm,2023,Base,27467.43,126.16
+Yogurt,Flavoured Yoghurt 80gm,2023,Festival (Aug–Sep),7775.85,50.72
+Yogurt,Flavoured Yoghurt 80gm,2023,Peak (Apr–Jun),4211.89,18.72
+Yogurt,Flavoured Yoghurt 80gm,2024,Base,30422.68,134.96
+Yogurt,Flavoured Yoghurt 80gm,2024,Festival (Aug–Sep),6509.08,28.8
+Yogurt,Flavoured Yoghurt 80gm,2024,Peak (Apr–Jun),10691.83,47.519999999999996
+Yogurt,Flavoured Yoghurt 80gm,2025,Base,70028.3,310.32
+Yogurt,Flavoured Yoghurt 80gm,2025,Festival (Aug–Sep),13970.66,61.92
+Yogurt,Flavoured Yoghurt 80gm,2025,Peak (Apr–Jun),20136.18,89.03999999999999
+Yogurt,Greek Yoghurt 100g,2023,Festival (Aug–Sep),1295.0,5.1
+Yogurt,Greek Yoghurt 100g,2023,Peak (Apr–Jun),19388.07,77.7
+Yogurt,Greek Yoghurt 100g - Trcmpu,2025,Base,11876.99,48.0
+Yogurt,Sugar Free Yoghurt 100g - Mango,2023,Base,8432.31,33.4
+Yogurt,Sugar Free Yoghurt 100g - Mango,2024,Base,6018.0599999999995,24.0
+Yogurt,Sugar Free Yoghurt 100g - Mango,2025,Base,1479.99,5.9
+Yogurt,Sugar Free Yoghurt 100g - Pineapple,2023,Base,6570.3099999999995,25.9
+Yogurt,Sugar Free Yoghurt 100g - Pineapple,2024,Base,5032.0,20.3
