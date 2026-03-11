@@ -161,10 +161,23 @@ CHART_LAYOUT = dict(
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
     font=dict(family='Plus Jakarta Sans', color='#334155', size=11),
-    margin=dict(l=4, r=4, t=10, b=8),
-    xaxis=dict(showgrid=False, tickfont=dict(size=11)),
-    yaxis=dict(showgrid=True, gridcolor='#f1f5f9', tickfont=dict(size=11)),
 )
+
+def chart(height=320, margin=None, xaxis_title=None, yaxis_title=None,
+          extra_margin_r=4, **kwargs):
+    """Helper that builds a layout dict without duplicate key conflicts."""
+    m = margin or dict(l=4, r=extra_margin_r, t=10, b=10)
+    layout = dict(
+        **CHART_LAYOUT,
+        height=height,
+        margin=m,
+        xaxis=dict(showgrid=False, tickfont=dict(size=11),
+                   title=xaxis_title or ''),
+        yaxis=dict(showgrid=True, gridcolor='#f1f5f9', tickfont=dict(size=11),
+                   title=yaxis_title or ''),
+    )
+    layout.update(kwargs)
+    return layout
 
 CAT_COLORS = {
     'Curd': '#2563eb', 'Cheese': '#f59e0b',
@@ -270,8 +283,7 @@ with tab1:
             text=[f'₹{v/1e6:.1f}M' for v in cat_rev['Total_Amount']],
             textposition='outside', textfont=dict(size=12, color='#334155'),
         ))
-        fig.update_layout(**CHART_LAYOUT, height=280,
-            xaxis_title='Revenue (₹ Millions)', margin=dict(l=4,r=70,t=10,b=10))
+        fig.update_layout(**chart(height=280, xaxis_title='Revenue (₹ Millions)', extra_margin_r=70))
         st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
     with col_b:
@@ -284,8 +296,7 @@ with tab1:
             textinfo='label+percent', textfont=dict(size=11),
             pull=[0.04 if c == top_cat else 0 for c in cat_rev['Category']],
         ))
-        fig2.update_layout(**CHART_LAYOUT, height=280, showlegend=False,
-            margin=dict(l=4,r=4,t=10,b=10))
+        fig2.update_layout(**chart(height=280), showlegend=False)
         st.plotly_chart(fig2, use_container_width=True, config={'displayModeBar': False})
 
     st.markdown("<div class='sec-title'>🌡️ Summer Hump — Curd Monthly Revenue Heatmap <span class='line'></span></div>", unsafe_allow_html=True)
@@ -301,7 +312,7 @@ with tab1:
             texttemplate='<b>%{text}K</b>', textfont=dict(size=10),
             colorbar=dict(title='₹K', tickfont=dict(size=10), thickness=12)
         ))
-        fig3.update_layout(**CHART_LAYOUT, height=240, margin=dict(l=4,r=4,t=10,b=10))
+        fig3.update_layout(**chart(height=240))
         st.plotly_chart(fig3, use_container_width=True, config={'displayModeBar': False})
         st.markdown("""<div class='insight'>
         🌞 <b>Summer Hump:</b> Curd revenue spikes <b>40%+ above baseline</b> in Apr–Jun.
@@ -318,10 +329,8 @@ with tab1:
         text=[f'₹{v/1000:.0f}K' for v in top10['Total_Amount']],
         textposition='outside', textfont=dict(size=11),
     ))
-    fig4.update_layout(**CHART_LAYOUT, height=340,
-        xaxis_title='Revenue (₹ Thousands)',
-        yaxis=dict(autorange='reversed', tickfont=dict(size=11), showgrid=False),
-        margin=dict(l=4,r=80,t=10,b=10))
+    fig4.update_layout(**chart(height=340, xaxis_title='Revenue (₹ Thousands)', extra_margin_r=80),
+        yaxis=dict(autorange='reversed', tickfont=dict(size=11), showgrid=False))
     st.plotly_chart(fig4, use_container_width=True, config={'displayModeBar': False})
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -347,11 +356,10 @@ with tab2:
                    layer='below', line_width=0,
                    annotation_text='☀️ Peak Season', annotation_position='top left',
                    annotation_font=dict(size=11, color='#92400e'))
-    fig5.update_layout(**CHART_LAYOUT, height=380,
-        xaxis_title='Month', yaxis_title='Revenue (₹ Thousands)',
+    fig5.update_layout(**chart(height=380, xaxis_title='Month', yaxis_title='Revenue (₹ Thousands)'),
         legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1,
                     bgcolor='rgba(0,0,0,0)', font=dict(size=11)),
-        hovermode='x unified', margin=dict(l=4,r=4,t=10,b=10))
+        hovermode='x unified')
     st.plotly_chart(fig5, use_container_width=True, config={'displayModeBar': False})
 
     c1, c2 = st.columns(2)
@@ -362,10 +370,9 @@ with tab2:
                       color_discrete_map=CAT_COLORS, barmode='stack', template='none',
                       labels={'Total_Revenue':'Revenue (₹)'})
         fig6.update_traces(marker_line_width=0)
-        fig6.update_layout(**CHART_LAYOUT, height=320,
+        fig6.update_layout(**chart(height=320, yaxis_title='Revenue (₹)'),
             legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1,
-                        bgcolor='rgba(0,0,0,0)', font=dict(size=10), title=''),
-            margin=dict(l=4,r=4,t=10,b=10))
+                        bgcolor='rgba(0,0,0,0)', font=dict(size=10), title=''))
         st.plotly_chart(fig6, use_container_width=True, config={'displayModeBar': False})
 
     with c2:
@@ -379,10 +386,10 @@ with tab2:
         fig7.add_vrect(x0='Mar', x1='Jun', fillcolor='#fef3c7', opacity=0.5,
                        layer='below', line_width=0)
         fig7.update_traces(line_width=2.5, marker=dict(size=6, line=dict(color='white',width=1.5)))
-        fig7.update_layout(**CHART_LAYOUT, height=320,
+        fig7.update_layout(**chart(height=320, yaxis_title='Avg Revenue (₹)'),
             legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1,
                         bgcolor='rgba(0,0,0,0)', font=dict(size=10), title=''),
-            hovermode='x unified', margin=dict(l=4,r=4,t=10,b=10))
+            hovermode='x unified')
         st.plotly_chart(fig7, use_container_width=True, config={'displayModeBar': False})
 
     st.markdown("<div class='sec-title'>🔍 Product-Level Monthly Trend <span class='line'></span></div>", unsafe_allow_html=True)
@@ -394,10 +401,10 @@ with tab2:
         fig8 = px.line(pts, x='Date', y='Total_Amount', color='Product',
                        template='none', labels={'Total_Amount':'Revenue (₹)','Date':''})
         fig8.update_traces(line_width=2.5)
-        fig8.update_layout(**CHART_LAYOUT, height=320,
+        fig8.update_layout(**chart(height=320, yaxis_title='Revenue (₹)'),
             legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1,
                         bgcolor='rgba(0,0,0,0)', font=dict(size=10), title=''),
-            hovermode='x unified', margin=dict(l=4,r=4,t=10,b=10))
+            hovermode='x unified')
         st.plotly_chart(fig8, use_container_width=True, config={'displayModeBar': False})
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -422,10 +429,9 @@ with tab3:
         labels={'Total_Qty_Kg':'Volume (Kg)','Total_Revenue':'Revenue (₹)'}
     )
     fig9.update_traces(marker=dict(line=dict(color='white',width=2), opacity=0.85))
-    fig9.update_layout(**CHART_LAYOUT, height=440,
+    fig9.update_layout(**chart(height=440, xaxis_title='Volume (Kg)', yaxis_title='Revenue (₹)'),
         legend=dict(title='', orientation='h', yanchor='bottom', y=1.02,
-                    xanchor='right', x=1, bgcolor='rgba(0,0,0,0)', font=dict(size=11)),
-        margin=dict(l=4,r=4,t=10,b=10))
+                    xanchor='right', x=1, bgcolor='rgba(0,0,0,0)', font=dict(size=11)))
     st.plotly_chart(fig9, use_container_width=True, config={'displayModeBar': False})
 
     STRATEGIES = {
@@ -475,10 +481,9 @@ with tab4:
                     fillcolor='#fef3c7', opacity=0.6, layer='below', line_width=0,
                     annotation_text='☀️ Summer Peak', annotation_position='top left',
                     annotation_font=dict(size=11, color='#92400e'))
-    fig10.update_layout(**CHART_LAYOUT, height=400,
-        yaxis_title='Forecast Revenue (₹ Thousands)',
+    fig10.update_layout(**chart(height=400, yaxis_title='Forecast Revenue (₹ Thousands)', extra_margin_r=150),
         legend=dict(orientation='v', x=1.01, y=1, bgcolor='rgba(0,0,0,0)', font=dict(size=10)),
-        hovermode='x unified', margin=dict(l=4,r=150,t=10,b=10))
+        hovermode='x unified')
     st.plotly_chart(fig10, use_container_width=True, config={'displayModeBar': False})
 
     st.markdown("<div class='sec-title'>📅 Monthly Forecast Rollup <span class='line'></span></div>", unsafe_allow_html=True)
@@ -493,12 +498,11 @@ with tab4:
         text=[f'₹{v/1000:.0f}K' for v in rollup['Forecast_Revenue']],
         textposition='outside', textfont=dict(size=11),
     ))
-    fig11.update_layout(**CHART_LAYOUT, height=320,
-        yaxis_title='Forecast Revenue (₹K)',
+    fig11.update_layout(**chart(height=320, yaxis_title='Forecast Revenue (₹K)',
+                                margin=dict(l=4,r=4,t=26,b=10)),
         annotations=[dict(x=0.5, y=1.07, xref='paper', yref='paper', showarrow=False,
                           text='🔴 Red bars = Summer Peak (Apr–Jun)',
-                          font=dict(size=10, color='#94a3b8'))],
-        margin=dict(l=4,r=4,t=26,b=10))
+                          font=dict(size=10, color='#94a3b8'))])
     st.plotly_chart(fig11, use_container_width=True, config={'displayModeBar': False})
 
     st.markdown("<div class='sec-title'>📦 2026 Dynamic Logistics Playbook <span class='line'></span></div>", unsafe_allow_html=True)
