@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
+import plotly.express as px
 import plotly.graph_objects as go
 import os
 
@@ -8,143 +10,157 @@ st.set_page_config(
     page_title="Milma Dairy Analytics",
     page_icon="🥛",
     layout="wide",
-    initial_sidebar_state="expanded" # Forces sidebar to start open
+    initial_sidebar_state="expanded"
 )
 
-# --- Enhanced CSS for Visibility ---
+# --- Contrast-Optimized CSS ---
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-/* Main Body Background and Font */
-.stApp {
+html, body, [class*="css"], .stApp {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     background-color: #f8fafc !important;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #0f172a !important; /* Forces black/dark text for the main body */
 }
 
-/* SIDEBAR FIX: Dark background, White text */
+#MainMenu, footer, header { visibility: hidden; }
+.block-container { padding: 1.5rem 2.5rem !important; max-width: 1440px; }
+
+/* Sidebar Styling - Keeps white text for dark background */
 [data-testid="stSidebar"] {
-    background-color: #0f172a !important; /* Deep navy/black */
-    border-right: 1px solid #1e293b;
-    min-width: 280px !important;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%) !important;
+    border-right: 1px solid rgba(255,255,255,0.1) !important;
 }
-
-/* Sidebar Text & Labels */
-[data-testid="stSidebar"] * {
-    color: #ffffff !important;
-}
+[data-testid="stSidebar"] * { color: #ffffff !important; }
 [data-testid="stSidebar"] label {
+    color: #cbd5e1 !important; /* Light gray for sidebar labels */
+    font-size: 0.75rem !important;
     font-weight: 700 !important;
-    color: #94a3b8 !important; /* Muted gray for labels */
     text-transform: uppercase;
-    font-size: 0.75rem;
+    letter-spacing: 1px;
 }
 
-/* Main Content Text Visibility */
-h1, h2, h3, p, span {
-    color: #0f172a !important;
-}
-
-/* Header Banner */
-.top-header {
-    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-    border-radius: 20px;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    color: white !important;
-}
-.top-header * { color: white !important; }
-
-/* KPI Cards */
-.kpi-card {
+/* Tab Styling - Black text for inactive, White for active */
+.stTabs [data-baseweb="tab-list"] {
     background: white;
-    border-radius: 16px;
-    padding: 1.5rem;
+    border-radius: 14px;
+    padding: 6px;
+    gap: 8px;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
-
-/* Tab Contrast */
 .stTabs [data-baseweb="tab"] {
-    color: #475569 !important;
-    font-weight: 600;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important; /* Explicitly dark text */
+    padding: 0.6rem 1.5rem !important;
 }
 .stTabs [aria-selected="true"] {
-    color: #2563eb !important;
-    border-bottom-color: #2563eb !important;
+    background: #2563eb !important;
+    color: white !important; /* Active tab stays white */
+}
+
+/* Section Title - Deep Black for visibility */
+.sec-title {
+    font-size: 1.1rem; 
+    font-weight: 800; 
+    color: #000000 !important; 
+    margin: 2rem 0 1rem;
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+}
+.sec-title .line { flex: 1; height: 1px; background: #cbd5e1; }
+
+/* Insight Box - Dark text on light blue */
+.insight {
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: #1e3a8a !important;
+    line-height: 1.6;
 }
 </style>
 """, unsafe_allow_html=True)
 
-# --- Refactored Chart Helper (Forces Black Text) ---
-def chart_style(fig, height=400, x_title="", y_title="", is_horizontal=False):
-    fig.update_layout(
-        height=height,
+# --- Refactored Chart Helper (Black Text Labels) ---
+def chart(height=320, margin=None, xaxis_title='', yaxis_title='', extra_margin_r=10, **kwargs):
+    m = margin or dict(l=10, r=extra_margin_r, t=25, b=10)
+    
+    # Base configuration using Dark Slate/Black for all diagram text
+    layout = dict(
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(color='#000000', family="Plus Jakarta Sans", size=12),
-        margin=dict(l=20, r=20, t=30, b=20),
+        font=dict(family='Plus Jakarta Sans', color='#000000', size=12), # Forces black font
+        height=height,
+        margin=m,
         xaxis=dict(
-            title=x_title,
-            showgrid=False,
-            tickfont=dict(color='#000000'),
-            titlefont=dict(color='#000000')
+            showgrid=False, 
+            tickfont=dict(size=11, color='#000000'), 
+            title=dict(text=xaxis_title, font=dict(color='#000000')),
+            linecolor='#cbd5e1'
         ),
         yaxis=dict(
-            title=y_title,
-            showgrid=True,
-            gridcolor='#e2e8f0',
-            tickfont=dict(color='#000000'),
-            titlefont=dict(color='#000000'),
-            autorange='reversed' if is_horizontal else None
-        )
+            showgrid=True, 
+            gridcolor='#e2e8f0', 
+            tickfont=dict(size=11, color='#000000'), 
+            title=dict(text=yaxis_title, font=dict(color='#000000')),
+            zerolinecolor='#cbd5e1'
+        ),
     )
-    return fig
-
-# --- Sidebar Content ---
-with st.sidebar:
-    st.markdown("### 🥛 MILMA SETTINGS")
-    st.write("---")
-    # Categories and Years filters go here
-    # Example:
-    # sel_cats = st.multiselect("Categories", ["Curd", "Paneer", "Cheese"])
-    st.info("Sidebar is now high-contrast.")
-
-# --- Main Dashboard ---
-st.markdown("""
-<div class='top-header'>
-    <small>SALES INTELLIGENCE PORTAL</small>
-    <h1>Milma Fermented Dairy Analytics</h1>
-    <p>Performance Tracking & Demand Forecasting (2021–2026)</p>
-</div>
-""", unsafe_allow_html=True)
-
-tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "📈 Trends", "🎯 Menu", "🔮 Forecast"])
-
-with tab1:
-    col_left, col_right = st.columns([3, 2])
     
-    with col_left:
-        st.subheader("Performance Breakdown")
-        # Example Horizontal Bar Chart
-        fig = go.Figure(go.Bar(
-            x=[1018, 259, 27, 26, 21],
-            y=["Skimmed Milk Curd", "Curd 500g", "Toned Milk", "Butter Milk", "Katti Moru"],
-            orientation='h',
-            marker_color='#2563eb',
-            text=["₹1018M", "₹259K", "₹27K", "₹26K", "₹21K"],
-            textposition='outside',
-            textfont=dict(color='#000000') # Forces bar text to Black
-        ))
-        st.plotly_chart(chart_style(fig, is_horizontal=True), use_container_width=True)
+    # Conflict resolution for yaxis/xaxis overrides
+    for axis in ['xaxis', 'yaxis']:
+        if axis in kwargs:
+            layout[axis].update(kwargs.pop(axis))
+            
+    layout.update(kwargs)
+    return layout
 
-    with col_right:
-        st.subheader("Market Share")
-        fig_pie = go.Figure(go.Pie(
-            labels=["Curd", "Butter Milk", "Others"],
-            values=[94, 4, 2],
-            hole=0.6,
-            textinfo='label+percent',
-            textfont=dict(color='#000000') # Forces pie labels to Black
-        ))
-        st.plotly_chart(chart_style(fig_pie), use_container_width=True)
+# ... [Keep your existing load_data() and data processing logic here] ...
+
+# --- Tab 1 Overview Implementation ---
+with tab1:
+    if not fd.empty:
+        # KPI Row
+        st.markdown("<div class='sec-title'>Key Performance Indicators <span class='line'></span></div>", unsafe_allow_html=True)
+        # (Metric logic here...)
+
+        # Charts Row
+        col_a, col_b = st.columns([3, 2])
+        
+        with col_a:
+            st.markdown("<div class='sec-title'>Top 10 Products <span class='line'></span></div>", unsafe_allow_html=True)
+            top10 = fd.groupby(['Category','Product'])['Total_Amount'].sum().reset_index().nlargest(10,'Total_Amount')
+            fig4 = go.Figure(go.Bar(
+                x=top10['Total_Amount']/1000, 
+                y=top10['Product'], 
+                orientation='h',
+                marker=dict(color='#2563eb', opacity=0.8),
+                text=[f'₹{v/1000:.0f}K' for v in top10['Total_Amount']],
+                textposition='outside',
+                textfont=dict(color='#000000') # Forces bar labels to black
+            ))
+            
+            # FIXED: Merge override into chart function
+            fig4.update_layout(**chart(
+                height=400, 
+                xaxis_title='Revenue (₹ Thousands)',
+                yaxis=dict(autorange='reversed', showgrid=False)
+            ))
+            st.plotly_chart(fig4, use_container_width=True, config={'displayModeBar': False})
+
+        with col_b:
+            st.markdown("<div class='sec-title'>Revenue Share <span class='line'></span></div>", unsafe_allow_html=True)
+            cat_rev = fd.groupby('Category')['Total_Amount'].sum().reset_index()
+            fig2 = go.Figure(go.Pie(
+                labels=cat_rev['Category'], 
+                values=cat_rev['Total_Amount'], 
+                hole=0.6,
+                textinfo='label+percent',
+                textfont=dict(color='#000000') # Forces pie labels to black
+            ))
+            fig2.update_layout(**chart(height=400), showlegend=False)
+            st.plotly_chart(fig2, use_container_width=True)
